@@ -1,0 +1,15 @@
+<h1>Список заказов</h1>
+<h3>Готовые заказы</h3>
+<ul class="list-group">
+  <li class="list-group-item clearfix"  ng-class="{'list-group-item-success': item.isCurrentUser}"
+      ng-repeat="(key, item) in list.orderListDone">№ {{item.orderID}}
+      <button class="btn btn-primary btn-sm pull-right " href="#" role="button"
+          ng-if="item.isCurrentUser" ng-click="list.deleteOrder(key)">Забрать заказ</button>
+  </li>
+</ul>
+
+<h3>Заказы в процессе выполнения</h3>
+<ul class="list-group">
+  <li class="list-group-item"  ng-class="{'list-group-item-info': item.isCurrentUser}"
+      ng-repeat="item in list.orderListDur">№ {{item.orderID}}</li>
+</ul>
